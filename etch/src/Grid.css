@@ -1,12 +1,11 @@
 .gridContainer {
     border: 1px solid black;
-    position:absolute;
     height:500px;
-    width:500px;
-
-    display:grid;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    
+    width:500px;  
+    grid-area: gridBox
 }
+
+.colourWheel {
+    grid-area: colourWheel;
+}
+

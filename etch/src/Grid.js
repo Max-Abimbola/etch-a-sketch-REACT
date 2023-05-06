@@ -11,7 +11,7 @@ class Grid extends Component{
         this.state = {
             gridArray : this.generateGridArray(size),
             brushColour : '#000000',
-            mouseDown: false
+            mouseDown: false,
             
         }
         this.changeColour = this.changeColour.bind(this)
@@ -19,6 +19,7 @@ class Grid extends Component{
         this.handleMouseDown = this.handleMouseDown.bind(this)
         this.handleOnMouseUp = this.handleOnMouseUp.bind(this)
         this.handleMouseOver = this.handleMouseOver.bind(this)
+        this.changeGridSize = this.changeGridSize.bind(this)
     }
 
     
@@ -50,6 +51,10 @@ class Grid extends Component{
         }
     }
 
+    changeGridSize(size){
+        this.setState({size:size})
+    }
+
     generateGridArray(size){
         const grid = []
         for(let i =0; i<size;i++){
@@ -78,7 +83,6 @@ class Grid extends Component{
                 handleMouseDown={this.handleMouseDown}
                 handleMouseOver={this.handleMouseOver}
                 handleOnMouseUp={this.handleOnMouseUp}
-                colour='#FFFFFF'
             />
         )))
         const gridTemplateStyles = {
@@ -88,14 +92,24 @@ class Grid extends Component{
             
         }
         return(
-            <div>
-                <div id='colourWheel'>
-                    <ColourWheel
-                    setPenColour={this.setPenColour}/>
+            <div className='container'>
+                <div className='controls'>
+                    <div className='colourWheel'>
+                        <ColourWheel
+                        setPenColour={this.setPenColour}/>
+                    </div>
+                    <div id='grid-size-boxes-container'>
+                        <button>2x2</button>
+                        <button>5x5</button>
+                        <button>10x10</button>
+                        <button>20x20</button>
+                        <button>50x50</button>
+                    </div>
                 </div>
                 <div className='gridContainer' style={gridTemplateStyles} >
                     {gridRender}
                 </div>
+
             </div>
         )
     }
