@@ -1,0 +1,9 @@
+#colorWheel{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width:100px;
+    height:100px;
+    border:none;
+    
+}
