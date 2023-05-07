@@ -1,11 +1,84 @@
+
+
 .gridContainer {
-    border: 1px solid black;
-    height:500px;
-    width:500px;  
-    grid-area: gridBox
+
+    height:600px;
+    width:600px;  
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+
 }
 
-.colourWheel {
-    grid-area: colourWheel;
+.container {
+    display:flex;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
 }
 
+input[type='button']{
+    height:100px;
+    width:100px;
+    border:none;
+    transition: background-color 0.3s ease;
+    background-color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-size:1em;`
+
+    
+}
+
+#cls-button{
+    background-color:#F39797 ;
+    width:200px;
+    color: White;
+    font-size:30px;
+    font-family: 'Open Sans', sans-serif;
+    
+}
+
+input[type='button']:hover{
+    background-color: #D7D7D7;
+    
+    
+}
+
+button{
+    height:100px;
+    width:100px;
+    border:none;
+    font-family: 'Open Sans', sans-serif;
+}
+
+button:hover{
+    background-color: rgb(201, 201, 201);
+}
+.colour-picker-button {
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+    transition: scale 0.3s ease;
+    font-family: 'Open Sans', sans-serif;
+
+}
+
+.colour-picker-button:hover {
+    scale:105%
+}
+
+.settings {
+    display:flex;
+    flex-direction: column;
+    gap:30px;
+    margin-right:150px;
+}
+
+.size-buttons-container {
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    
+
+
+
+}
